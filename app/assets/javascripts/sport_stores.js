@@ -1,4 +1,12 @@
-var app = angular.module('sportstores', []);
+var app = angular.module('sportstores', ['ngRoute', 'templates',
+    'ngResource', 'ngMessages','ui.bootstrap']);
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/', {
+        controller: "sportsStoresCtrl",
+        templateUrl: "products_list.html"
+    })
+
+}]);
 
 app.controller('sportsStoresCtrl', ['$scope', function ($scope) {
 
@@ -12,7 +20,5 @@ app.controller('sportsStoresCtrl', ['$scope', function ($scope) {
                 category: "Category #2", price: 210 },
                 { name: "Product #4", description: "A product",
                 category: "Category #3", price: 202 }]
-            }
-    console.log($scope.data);
-	
+            };
 }])

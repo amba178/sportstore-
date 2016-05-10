@@ -1,15 +1,3 @@
- <div class="row" ng-app="sportstores" ng-controller="sportsStoresCtrl">
-        <div class="col-xs-3">
-             Categories go here
-        </div>
-        <div class="col-xs-8">
-            <div class="well" ng-repeat="item in data.products">
-                <strong>
-                    {{item.name}}
-                    <span class="pull-right label label-primary">
-                        {{item.price | currency}}
-                    </span>
-                </strong>
-            </div>
-        </div>
+ <div ng-app="sportstores">
+    <div ng-view></div>
 </div>
