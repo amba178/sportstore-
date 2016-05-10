@@ -7,7 +7,7 @@ app.config(['$routeProvider', function($routeProvider) {
         controller: "sportsStoresCtrl",
         templateUrl: "products_list.html"
     }).when('/checkout', {
-        controller: 'productListCtrl',
+        controller: 'cartSummaryController',
         templateUrl: 'checkoutSummary.html'
 
     })
