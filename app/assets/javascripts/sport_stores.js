@@ -14,12 +14,21 @@ app.config(['$routeProvider', function($routeProvider) {
 
 }]);
 
-// app.constant('dataUrl', 'http://localhost:3000/products.json')
+app.constant('localDataUrl', 'http://localhost:3000/products.json');
+app.constant('productionDataUrl', 'https://sportstores.herokuapp.com/products.json');
 
-app.constant('dataUrl', 'https://sportstores.herokuapp.com/products.json')
-
-app.controller('sportsStoresCtrl', ['$scope', '$http','dataUrl', function ($scope, $http, dataUrl) {
+app.controller('sportsStoresCtrl', ['$scope', '$http','productionDataUrl','localDataUrl','$location', 
+    function ($scope, $http, productionDataUrl, localDataUrl, $location) {
     $scope.data = {};
+         
+        var dataUrl = "";
+        if($location.host()=='localhost'){
+            dataUrl = localDataUrl;
+        }else{
+            dataUrl = productionDataUrl;
+        }
+    
+
     $http.get(dataUrl).then(function(response) {
         $scope.data.products = response.data;
 
