@@ -6,9 +6,23 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="sportstores">
 	<%=render partial: 'layouts/header'%> 
+	<% if notice.present? %> 
+		<aside class="alert alert-info">
+			<%= notice %> 
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</aside>
+		<% end %>
+	<% if alert.present? %> 
+		<aside class="alert alert-danger">
+			<%= alert %> 
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</aside>
+	<% end %>
+	
     <%= yield %>
+
     
 
 </body>

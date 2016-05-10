@@ -1,24 +1,29 @@
 var app = angular.module('sportstores', ['ngRoute', 'templates',
-    'ngResource', 'ngMessages','ui.bootstrap', 'customFilters']);
+    'ngResource', 'ngMessages','ui.bootstrap', 'customFilters', 'cart']);
+
+
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
         controller: "sportsStoresCtrl",
         templateUrl: "products_list.html"
+    }).when('/checkout', {
+        templateUrl: 'checkoutSummary.html'
+
     })
 
 }]);
 
-app.controller('sportsStoresCtrl', ['$scope', function ($scope) {
+app.constant('dataUrl', 'http://localhost:3000/products.json')
 
-	$scope.data = {
-	       products: [
-                { name: "Product #1", description: "A product",
-                 category: "Category #1", price: 100 },
-                { name: "Product #2", description: "A product",
-                category: "Category #1", price: 110 },
-                { name: "Product #3", description: "A product",
-                category: "Category #2", price: 210 },
-                { name: "Product #4", description: "A product",
-                category: "Category #3", price: 202 }]
-            };
+app.controller('sportsStoresCtrl', ['$scope', '$http','dataUrl', function ($scope, $http, dataUrl) {
+    $scope.data = {};
+    $http.get(dataUrl).then(function(response) {
+        $scope.data.products = response.data;
+
+    }, function(response) {
+        console.log(response.statusText);
+        $scope.data.status = response.status;
+        $scope.data.statusText = response.statusText;
+    });
+
 }])
