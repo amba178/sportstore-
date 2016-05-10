@@ -41,7 +41,7 @@ app.directive("cartSummary", ['cart', function (cart) {
     return {
         restrict: "E",
         templateUrl: "cartSummary.html",
-        controller: function ($scope) {
+        controller: ['$scope', function ($scope) {
 
             var cartData = cart.getProducts();
 
@@ -60,6 +60,6 @@ app.directive("cartSummary", ['cart', function (cart) {
                 }
                 return total;
             }
-        }
+        }]
     };
 }]);

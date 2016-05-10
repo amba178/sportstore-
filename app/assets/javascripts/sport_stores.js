@@ -14,9 +14,9 @@ app.config(['$routeProvider', function($routeProvider) {
 
 }]);
 
-// app.constant('dataUrl', 'http://localhost:3000/products.json')
+app.constant('dataUrl', 'http://localhost:3000/products.json')
 
-app.constant('dataUrl', 'https://sportstores.herokuapp.com/products.json')
+// app.constant('dataUrl', 'https://sportstores.herokuapp.com/products.json')
 
 app.controller('sportsStoresCtrl', ['$scope', '$http','dataUrl', function ($scope, $http, dataUrl) {
     $scope.data = {};
