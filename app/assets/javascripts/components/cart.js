@@ -37,7 +37,7 @@ app.factory("cart", [function () {
     }
 }])
 
-app.directive("cartSummary", function (cart) {
+app.directive("cartSummary", ['cart', function (cart) {
     return {
         restrict: "E",
         templateUrl: "cartSummary.html",
@@ -62,4 +62,4 @@ app.directive("cartSummary", function (cart) {
             }
         }
     };
-});
+}]);
