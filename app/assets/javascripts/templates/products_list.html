@@ -1,9 +1,11 @@
-<div class="row">
-        <div class="col-xs-3">
-             Categories go here
+<div class="row" ng-controller="productListCtrl">
+        <div class="col-xs-3" >
+             <a ng-click="selectCategory()" class="btn btn-block
+                  btn-default btn-lg"> Home </a>
+            <a ng-repeat="item in data.products | orderBy: 'category' | unique: 'category'" ng-click="selectCategory(item)" class="btn btn-default btn-block btn-lg"> {{item}}</a>
         </div>
         <div class="col-xs-8">
-            <div class="well" ng-repeat="item in data.products">
+            <div class="well" ng-repeat="item in data.products | filter:categoryFilterFn">
              <h3>
                 <strong>
                     {{item.name}}

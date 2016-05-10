@@ -1,5 +1,5 @@
 var app = angular.module('sportstores', ['ngRoute', 'templates',
-    'ngResource', 'ngMessages','ui.bootstrap']);
+    'ngResource', 'ngMessages','ui.bootstrap', 'customFilters']);
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
         controller: "sportsStoresCtrl",
