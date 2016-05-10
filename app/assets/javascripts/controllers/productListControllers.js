@@ -1,7 +1,7 @@
 angular.module("sportstores")
 	.constant("productListActiveClass", "btn-primary")
 	.constant("productListPageCount", 3)
-    .controller("productListCtrl",['$scope','$filter','productListActiveClass','productListPageCount','cart', 
+    .controller("productListCtrl", ['$scope','$filter','productListActiveClass','productListPageCount','cart', 
     	function($scope, $filter, productListActiveClass, productListPageCount, cart) {
 
         var selectedCategory = null;
