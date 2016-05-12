@@ -1,8 +1,8 @@
 var app = angular.module('sportstores');
 
 // app.constant('localDataUrl', 'http://localhost:3000/products.json');
-app.constant('orderUrl', 'https://sportstores.herokuapp.com/orders.json');
-// app.constant('orderUrl', 'http://localhost:3000/orders.json')
+// app.constant('orderUrl', 'https://sportstores.herokuapp.com/orders.json');
+app.constant('orderUrl', 'http://localhost:3000/orders.json')
 
 app.controller('orderProductsCtrl', ['$scope', '$http','$location','cart', 'orderUrl', '$resource', 
     '$rootScope', function ($scope, $http, $location, cart, orderUrl, $resource, $rootScope) {
