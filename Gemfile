@@ -15,6 +15,7 @@ gem 'angular-rails-templates'
 # gem 'sprockets', '~> 2.0'
 gem 'sprockets-rails', '2.3.3'
 gem 'rack-cors', :require => 'rack/cors'
+gem "responders"
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
