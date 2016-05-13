@@ -2,7 +2,7 @@ angular.module("sportstores")
 .constant("productUrl", "http://localhost:3000/products.json")
 .config(function($httpProvider) {
     $httpProvider.defaults.withCredentials = true;})
-.controller("productCtrl", function ($scope, $resource, productUrl) {
+.controller("productCtrl", [ '$scope', '$resource', 'productUrlfunction', function ($scope, $resource, productUrl) {
     $scope.products = {};
 
     $scope.productsResource = $resource("/products/:id.json", { id: "@id" },
@@ -42,4 +42,4 @@ angular.module("sportstores")
     }
 
     $scope.listProducts();
-});
+}]);
