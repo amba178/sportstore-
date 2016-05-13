@@ -20,5 +20,6 @@
 //= require angular-rails-templates 
 //= require sport_stores
 //= require sportStoreAdmin 
+//= require controllers/adminProductController 
 //= require_tree ./templates 
 //= require_tree .
