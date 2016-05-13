@@ -1,4 +1,4 @@
-angular.module("sportsStoreAdmin")
+angular.module("sportstores")
 .constant("productUrl", "http://localhost:3000/products.json")
 .config(function($httpProvider) {
     $httpProvider.defaults.withCredentials = true;})

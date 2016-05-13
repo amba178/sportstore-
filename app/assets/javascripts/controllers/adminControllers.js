@@ -1,4 +1,4 @@
-var app = angular.module('sportsStoreAdmin');
+var app = angular.module('sportstores');
 
 
 // app.constant('ordersUrl', "http://localhost:3000/orders.json");
