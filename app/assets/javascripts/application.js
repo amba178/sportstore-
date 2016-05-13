@@ -19,5 +19,6 @@
 //= require 'angular-bootstrap'
 //= require angular-rails-templates 
 //= require sport_stores
+//= require sportStoreAdmin 
 //= require_tree ./templates 
 //= require_tree .

@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token, if: :json_request?
   before_action :authenticate_user!
   before_filter :discard_flash, :unless => :devise_controller?
+  
 
 private
 	def discard_flash
@@ -13,6 +14,6 @@ private
 
 	def json_request?
 	  request.format.json?
-	 end
+	end
 
 end

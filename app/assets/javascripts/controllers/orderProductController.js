@@ -7,6 +7,8 @@ app.constant('orderUrl', 'https://sportstores.herokuapp.com/orders.json');
 app.controller('orderProductsCtrl', ['$scope', '$http','$location','cart', 'orderUrl', '$resource', 
     '$rootScope', function ($scope, $http, $location, cart, orderUrl, $resource, $rootScope) {
     $rootScope.data = {};
+    $scope.createResource = $resource("/orders.json",{"save": {"method": "POST"}});
+    
     $scope.sendOrder = function (shippingDetails) {
             var order = angular.copy(shippingDetails);
             order.products = cart.getProducts();

@@ -163,7 +163,8 @@ CREATE TABLE users (
     current_sign_in_ip inet,
     last_sign_in_ip inet,
     created_at timestamp without time zone NOT NULL,
-    updated_at timestamp without time zone NOT NULL
+    updated_at timestamp without time zone NOT NULL,
+    roles character varying[] DEFAULT '{}'::character varying[]
 );
 
 
@@ -312,4 +313,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160510222842');
 INSERT INTO schema_migrations (version) VALUES ('20160510223435');
 
 INSERT INTO schema_migrations (version) VALUES ('20160511033143');
+
+INSERT INTO schema_migrations (version) VALUES ('20160513014031');
 

@@ -15,4 +15,4 @@ p9=Product.create(:name => 'Bling-Bling King', :description => "Gold-plated, dia
 # order = Order.create(:name => "Salem Amba", street: "123 Weightman street", city: "San Diego", 
 # 	      zip: "92105", :state => "CA", country: "United States of America", giftwrap: true) 
 # order.products << p1
-# User.create(:password => "salimali178", :password_confirmation => "salimali178", :username => "salemamba", :admin => true)
+User.create(:password => "salimali178", :password_confirmation => "salimali178", :email => "salemamba@gmail.com", roles: ["admin"])

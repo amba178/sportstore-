@@ -1,5 +1,5 @@
 var app = angular.module('sportstores', ['ngRoute', 'templates',
-    'ngResource', 'ngMessages','ui.bootstrap', 'customFilters', 'cart']);
+    'ngResource', 'ngMessages','ui.bootstrap', 'customFilters', 'cart', 'sportsStoreAdmin']);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {
@@ -14,6 +14,6 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'placeOrder.html'
     }).when('/complete', {
         templateUrl: 'thankYou.html'
-    });
+    })
 
 }]);
