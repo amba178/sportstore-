@@ -1,4 +1,4 @@
-var app = angular.module('sportsStoreAdmin', ['ngRoute', 'templates']);
+var app = angular.module('sportstores');
 
 app.config(['$routeProvider', function($routeProvider) {
 
