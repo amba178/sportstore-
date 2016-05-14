@@ -55,7 +55,8 @@ app.constant("productListActiveClass", "btn-primary")
         }
     }]);
 
-app.constant('orderUrl', 'http://localhost:3000/orders.json');
+// app.constant('orderUrl', 'http://localhost:3000/orders.json');
+app.constant('orderUrl', 'https://sportstores.herokuapp.com/orders.json');
 app.controller('orderProductsCtrl', ['$scope', '$http','$location','cart', 'orderUrl', '$resource', 
     '$rootScope', function ($scope, $http, $location, cart, orderUrl, $resource, $rootScope) {
     $rootScope.data = {};
@@ -96,7 +97,8 @@ app.controller('cartSummaryController', ['$scope','cart', function($scope, cart)
 
 
 
-app.constant("productUrl", "http://localhost:3000/products.json")
+// app.constant("productUrl", "http://localhost:3000/products.json")
+app.constant('productUrl', 'https://sportstores.herokuapp.com/products.json');
 app.config(function($httpProvider) {
     $httpProvider.defaults.withCredentials = true;})
 app.controller("productCtrl", [ '$scope', '$resource', 'productUrl', function ($scope, $resource, productUrl) {
@@ -144,8 +146,8 @@ app.controller("productCtrl", [ '$scope', '$resource', 'productUrl', function ($
 
 
 
-app.constant('ordersUrl', "http://localhost:3000/orders.json");
-// app.constant('orderUrl', 'https://sportstores.herokuapp.com/orders.json');
+// app.constant('ordersUrl', "http://localhost:3000/orders.json");
+app.constant('orderUrl', 'https://sportstores.herokuapp.com/orders.json');
 
 
 app.controller("mainCtrl", ['$scope', function ($scope) {
