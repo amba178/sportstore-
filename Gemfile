@@ -16,6 +16,9 @@ gem 'angular-rails-templates'
 gem 'sprockets-rails', '2.3.3'
 gem 'rack-cors', :require => 'rack/cors'
 gem "responders"
+gem 'rails_12factor'
+gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
